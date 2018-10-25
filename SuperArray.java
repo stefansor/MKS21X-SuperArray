@@ -65,8 +65,8 @@ public class SuperArray{
   public String toString(){
     String[] newp = new String[this.size()];
     int a = 0;
-    for(int i = 0; i < this.data.length; i++){
-      if(!this.data[i].equals("null")){
+    for(int i = 0; i < this.size(); i++){
+      if(!this.data[i].equals("")){
         newp[a] = this.data[i];
         a = a + 1;
       }
@@ -74,6 +74,11 @@ public class SuperArray{
     String format = "" + newp;
     String newformat = format.replaceAll("\"", "");
     return newformat;
+  }
+  public String toStringDebug(){
+    String aformat = "" + this.data;
+    String anformat = aformat.replaceAll("\"","");
+    return anformat;
   }
 
 }
