@@ -45,7 +45,7 @@ public class SuperArray{
     return false;
   }
   public String get(int index){
-    if(index < this.size()){
+    if(index < this.size() && index > 0){
       return this.data[index];
     }
     else{
