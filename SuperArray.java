@@ -14,11 +14,12 @@ public class SuperArray{
   public int size(){
     int count = 0;
     for(int i = 0; i < this.data.length; i++){
-      if(!this.data[i].equals("null")){
+      if(!this.data[i].equals("")){
         count = count + 1;
       }
     }
-    return count;
+    this.size = count;
+    return this.size;
   }
   public boolean isEmpty(){
     if(this.size() == 0){
@@ -28,8 +29,13 @@ public class SuperArray{
   }
   public boolean add(String elem){
     if(this.size() >= 10){
-      this.data = new String[this.data.length + 1];
-      this.data[this.data.length - 1] = elem;
+      int a = this.size(); 
+      String[] newdata = new String[this.data.length * 2];
+      for(int i = 0; i < a; i++){
+        newdata[i] = this.data[i];
+      }  
+      newdata[a] = elem;
+      this.data = newdata;
       return true;
     }
     if(this.size() < 10){
