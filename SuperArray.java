@@ -49,7 +49,7 @@ public class SuperArray{
       return this.data[index];
     }
     else{
-      return null;
+      return "error";
     }
   }
   public String set(int index, String elem){
@@ -59,7 +59,7 @@ public class SuperArray{
       return old;
     }
     else{
-      return null;
+      return "error";
     }
   }
   public String toString(){
