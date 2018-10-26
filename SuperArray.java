@@ -14,7 +14,7 @@ public class SuperArray{
   public int size(){
     int count = 0;
     for(int i = 0; i < this.data.length; i++){
-      if(!this.data[i].equals("")){
+      if(!(this.data[i] == null)){
         count = count + 1;
       }
     }
@@ -29,11 +29,11 @@ public class SuperArray{
   }
   public boolean add(String elem){
     if(this.size() >= 10){
-      int a = this.size(); 
+      int a = this.size();
       String[] newdata = new String[this.data.length * 2];
       for(int i = 0; i < a; i++){
         newdata[i] = this.data[i];
-      }  
+      }
       newdata[a] = elem;
       this.data = newdata;
       return true;
@@ -63,22 +63,28 @@ public class SuperArray{
     }
   }
   public String toString(){
-    String[] newp = new String[this.size()];
-    int a = 0;
+    String argh = "[";
     for(int i = 0; i < this.size(); i++){
-      if(!this.data[i].equals("")){
-        newp[a] = this.data[i];
-        a = a + 1;
+      if(i == this.size() - 1){
+        argh = argh + this.data[i] + "]";
+      }
+      else{
+        argh = argh + this.data[i] + ", ";
       }
     }
-    String format = "" + newp;
-    String newformat = format.replaceAll("\"", "");
-    return newformat;
+    return argh;
   }
   public String toStringDebug(){
-    String aformat = "" + this.data;
-    String anformat = aformat.replaceAll("\"","");
-    return anformat;
+    String arr = "[";
+    for(int i = 0; i < this.data.length; i++){
+      if(i == this.data.length - 1){
+        arr = arr + this.data[i] + "]";
+      }
+      else{
+        arr = arr + this.data[i] + ", ";
+      }
+    }
+    return arr;
   }
 
 }
