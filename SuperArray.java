@@ -116,5 +116,55 @@ public class SuperArray{
     }
     return -1;
   }
+  public void add(int index, String elem){
+    if(index < 0 || index > this.size()){
+      System.out.print("error");
+    }
+    else{
+      int a = 0;
+      String[] spit = new String[this.size() + 1];
+      for(int i = 0; i < spit.length; i++){
+        if(i == index){
+          spit[i] = elem;
+        }
+        if (i != index){
+          spit[i] = this.data[a];
+          a++;
+        }
+      }
+      this.data = spit;
+    }
+  }
+
+public String remove(int index){
+  if(index < 0 || index > this.size()){
+    return null;
+  }
+  else{
+    String old = this.data[index];
+    String[] newr = new String[this.data.length - 1];
+    int a = 0;
+    for(int i = 0; i < newr.length; i++){
+      if(i < index){
+        newr[i] = this.data[i];
+        a++;
+      }
+      if(i == index){
+        a++;
+        newr[i] = this.data[a];
+      }
+      if(i > index){
+        a++;
+        newr[i] = this.data[a];
+      }
+    }
+    this.data = newr;
+    return old;
+  }
+}
+
+
+
+
 
 }
