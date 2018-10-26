@@ -140,5 +140,14 @@ public class Driver {
     System.out.println(randomLetters.remove(9));//should print null
     System.out.println(randomLetters.remove(1));//should print f;
     System.out.println(randomLetters);//should print [b,a,g,c,z,b,z]
+
+    System.out.println();
+    
+    System.out.println(randomLetters.remove("d"));//should print false
+    System.out.println(randomLetters.remove("z"));//should print true
+    System.out.println(randomLetters);//should print [b,a,g,c,b,z]
+
+    System.out.println();
+    System.out.println("Phase 3 testing, end");
   }
 }
