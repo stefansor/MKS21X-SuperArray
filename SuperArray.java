@@ -92,4 +92,29 @@ public class SuperArray{
     return arr;
   }
 
+  public boolean contains(String target){
+    for(int i = 0; i < this.size(); i++){
+      if(this.data[i].equals(target)){
+        return true;
+      }
+    }
+    return false;
+  }
+  public int indexOf(String target){
+    for(int i = 0; i < this.size() ; i++){
+      if(this.data[i].equals(target)){
+        return i;
+      }
+    }
+    return -1;
+  }
+  public int lastIndexOf(String target){
+    for(int i = this.size() - 1; i > 0; i--){
+      if(this.data[i].equals(target)){
+        return i;
+      }
+    }
+    return -1;
+  }
+
 }
