@@ -29,13 +29,8 @@ public class SuperArray{
   }
   public boolean add(String elem){
     if(this.size() >= 10){
-      int a = this.size();
-      String[] newdata = new String[this.data.length * 2];
-      for(int i = 0; i < a; i++){
-        newdata[i] = this.data[i];
-      }
-      newdata[a] = elem;
-      this.data = newdata;
+      this.resize();
+      this.data[this.size()] = elem;
       return true;
     }
     if(this.size() < 10){
@@ -44,6 +39,16 @@ public class SuperArray{
     }
     return false;
   }
+
+  private void resize(){
+    int a = this.size();
+    String[] newdata = new String[this.data.length * 2];
+    for(int i = 0; i < a; i++){
+      newdata[i] = this.data[i];
+    }
+    this.data = newdata;
+  }
+
   public String get(int index){
     if(index < this.size() && index > 0){
       return this.data[index];
