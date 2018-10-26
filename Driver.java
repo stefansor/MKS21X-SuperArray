@@ -111,7 +111,7 @@ public class Driver {
     System.out.println("The first occurance of j is at: " + randomLetters.indexOf("j")); //should print -1
 
     System.out.println();
-    
+
     System.out.println("The last occurance of b is at: " + randomLetters.lastIndexOf("b")); //should print 5
     System.out.println("The last occurance of f is at: " + randomLetters.lastIndexOf("f")); //should print 1
     System.out.println("The last occurance of g is at: " + randomLetters.lastIndexOf("g")); //should print 2
@@ -120,5 +120,25 @@ public class Driver {
     System.out.println("The last occurance of j is at: " + randomLetters.lastIndexOf("j")); //should print -1
 
     System.out.println();
+
+    System.out.println();
+
+    //testing add(int,String)
+    System.out.println(randomLetters);//should print [b,f,g,c,z,b,z]
+
+    randomLetters.add(2, "a");
+    System.out.println(randomLetters);//should print [b,f,a,g,c,z,b,z]
+    randomLetters.add(10, "a");//should print error
+
+    System.out.println();
+
+    System.out.println();
+
+    //testing remove()
+    System.out.println(randomLetters);//should print [b,f,a,g,c,z,b,z]
+
+    System.out.println(randomLetters.remove(9));//should print null
+    System.out.println(randomLetters.remove(1));//should print f;
+    System.out.println(randomLetters);//should print [b,a,g,c,z,b,z]
   }
 }
