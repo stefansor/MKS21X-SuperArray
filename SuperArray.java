@@ -135,35 +135,41 @@ public class SuperArray{
       this.data = spit;
     }
   }
-
-public String remove(int index){
-  if(index < 0 || index > this.size()){
-    return null;
+  public String remove(int index){
+    if(index < 0 || index > this.size()){
+      return null;
+    }
+    else{
+      String old = this.data[index];
+      String[] newr = new String[this.data.length - 1];
+      int a = 0;
+      for(int i = 0; i < newr.length; i++){
+        if(i < index){
+          newr[i] = this.data[i];
+          a++;
+        }
+        if(i == index){
+          a++;
+          newr[i] = this.data[a];
+        }
+        if(i > index){
+          a++;
+          newr[i] = this.data[a];
+        }
+      }
+      this.data = newr;
+      return old;
+    }
   }
-  else{
-    String old = this.data[index];
-    String[] newr = new String[this.data.length - 1];
-    int a = 0;
-    for(int i = 0; i < newr.length; i++){
-      if(i < index){
-        newr[i] = this.data[i];
-        a++;
-      }
-      if(i == index){
-        a++;
-        newr[i] = this.data[a];
-      }
-      if(i > index){
-        a++;
-        newr[i] = this.data[a];
+  public boolean remove(String target){
+    if(this.contains(target)){
+      int a = this.indexOf(target);
+      if(this.remove(a).equals(target)){
+        return true;
       }
     }
-    this.data = newr;
-    return old;
+    return false;
   }
-}
-
-
 
 
 
